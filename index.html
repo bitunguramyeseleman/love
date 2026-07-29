@@ -24,6 +24,40 @@
       overflow-x: hidden;
     }
 
+    /* floating hearts background */
+    .floating-hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .floating-hearts span {
+      position: absolute;
+      bottom: -80px;
+      color: #f4aab9;
+      font-size: 30px;
+      user-select: none;
+      animation: rise 14s linear infinite;
+      text-shadow: 0 0 20px rgba(255, 60, 100, 0.6);
+      opacity: 0.3;
+    }
+    .floating-hearts span:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 34px; }
+    .floating-hearts span:nth-child(2) { left: 16%; animation-delay: 2.8s; font-size: 26px; }
+    .floating-hearts span:nth-child(3) { left: 28%; animation-delay: 5.2s; font-size: 38px; }
+    .floating-hearts span:nth-child(4) { left: 42%; animation-delay: 1.4s; font-size: 30px; }
+    .floating-hearts span:nth-child(5) { left: 56%; animation-delay: 6.8s; font-size: 32px; }
+    .floating-hearts span:nth-child(6) { left: 70%; animation-delay: 3.6s; font-size: 28px; }
+    .floating-hearts span:nth-child(7) { left: 84%; animation-delay: 8.2s; font-size: 36px; }
+    .floating-hearts span:nth-child(8) { left: 94%; animation-delay: 4.8s; font-size: 24px; }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(0.4) rotate(0deg); opacity: 0.2; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-120vh) scale(1.8) rotate(25deg); opacity: 0; }
+    }
+
     /* Developer Credit - Centered at Top */
     .developer-credit {
       position: fixed;
@@ -48,22 +82,6 @@
       letter-spacing: 1.5px;
       text-shadow: 0 1px 10px rgba(255, 100, 150, 0.2);
     }
-    .developer-credit .heart-icon {
-      color: #ff6b8a;
-      margin: 0 4px;
-    }
-    .developer-credit .highlight {
-      color: #f4aab9;
-      font-weight: 700;
-    }
-    .developer-credit .btse {
-      color: #ffb6c8;
-      font-weight: 700;
-    }
-    .developer-credit .divider {
-      color: rgba(255, 255, 255, 0.2);
-      margin: 0 6px;
-    }
 
     /* main container */
     .love-container {
@@ -76,7 +94,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     /* ENVELOPE — premium design */
@@ -345,7 +363,7 @@
       .love-container {
         width: 98vw;
         height: 420px;
-        margin-top: 10px;
+        margin-top: 15px;
       }
       .envelope { height: 250px; border-radius: 24px; }
       .flap { border-left-width: 220px; border-right-width: 220px; border-top-width: 130px; }
@@ -376,7 +394,7 @@
         letter-spacing: 0.5px;
       }
       .love-container {
-        margin-top: 5px;
+        margin-top: 10px;
       }
       .flap { border-left-width: 170px; border-right-width: 170px; border-top-width: 105px; }
       .flap::after { left: -170px; width: 340px; top: -105px; height: 105px; }
@@ -401,9 +419,12 @@
 <body>
   <!-- Developer Credit - Centered at TOP -->
   <div class="developer-credit">
-    <span>
-      ❤️ Developer Love ❤️ | BTSE
-    </span>
+    <span>❤️ Developer Love ❤️ | BTSE</span>
+  </div>
+
+  <!-- floating hearts -->
+  <div class="floating-hearts">
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
   </div>
 
   <div class="love-container" id="loveContainer">

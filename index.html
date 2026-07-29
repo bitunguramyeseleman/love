@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Love</title>
+  <title>My Love · Magical Open</title>
   <style>
     * {
       margin: 0;
@@ -21,9 +21,10 @@
       padding: 20px;
       margin: 0;
       position: relative;
+      overflow-x: hidden;
     }
 
-    /* floating hearts background — more refined */
+    /* floating hearts background — INCREASED COUNT & VARIETY */
     .floating-hearts {
       position: fixed;
       inset: 0;
@@ -33,31 +34,44 @@
     }
     .floating-hearts span {
       position: absolute;
-      bottom: -80px;
+      bottom: -100px;
       color: #f4aab9;
-      font-size: 30px;
+      font-size: 28px;
       user-select: none;
-      animation: rise 14s linear infinite;
-      text-shadow: 0 0 20px rgba(255, 60, 100, 0.6);
-      opacity: 0.3;
+      animation: rise 16s linear infinite;
+      text-shadow: 0 0 25px rgba(255, 60, 100, 0.7);
+      opacity: 0.25;
     }
-    .floating-hearts span:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 34px; }
-    .floating-hearts span:nth-child(2) { left: 16%; animation-delay: 2.8s; font-size: 26px; }
-    .floating-hearts span:nth-child(3) { left: 28%; animation-delay: 5.2s; font-size: 38px; }
-    .floating-hearts span:nth-child(4) { left: 42%; animation-delay: 1.4s; font-size: 30px; }
-    .floating-hearts span:nth-child(5) { left: 56%; animation-delay: 6.8s; font-size: 32px; }
-    .floating-hearts span:nth-child(6) { left: 70%; animation-delay: 3.6s; font-size: 28px; }
-    .floating-hearts span:nth-child(7) { left: 84%; animation-delay: 8.2s; font-size: 36px; }
-    .floating-hearts span:nth-child(8) { left: 94%; animation-delay: 4.8s; font-size: 24px; }
+    /* 20 hearts with varied positions, sizes, delays */
+    .floating-hearts span:nth-child(1) { left: 2%; animation-delay: 0.0s; font-size: 32px; opacity: 0.35; }
+    .floating-hearts span:nth-child(2) { left: 7%; animation-delay: 1.8s; font-size: 26px; opacity: 0.3; }
+    .floating-hearts span:nth-child(3) { left: 12%; animation-delay: 3.6s; font-size: 40px; opacity: 0.4; }
+    .floating-hearts span:nth-child(4) { left: 18%; animation-delay: 5.2s; font-size: 22px; opacity: 0.25; }
+    .floating-hearts span:nth-child(5) { left: 24%; animation-delay: 0.9s; font-size: 36px; opacity: 0.35; }
+    .floating-hearts span:nth-child(6) { left: 30%; animation-delay: 7.4s; font-size: 30px; opacity: 0.3; }
+    .floating-hearts span:nth-child(7) { left: 36%; animation-delay: 4.1s; font-size: 44px; opacity: 0.45; }
+    .floating-hearts span:nth-child(8) { left: 42%; animation-delay: 2.3s; font-size: 24px; opacity: 0.28; }
+    .floating-hearts span:nth-child(9) { left: 48%; animation-delay: 6.7s; font-size: 38px; opacity: 0.4; }
+    .floating-hearts span:nth-child(10) { left: 54%; animation-delay: 1.2s; font-size: 28px; opacity: 0.32; }
+    .floating-hearts span:nth-child(11) { left: 60%; animation-delay: 8.5s; font-size: 34px; opacity: 0.38; }
+    .floating-hearts span:nth-child(12) { left: 66%; animation-delay: 3.9s; font-size: 20px; opacity: 0.22; }
+    .floating-hearts span:nth-child(13) { left: 72%; animation-delay: 5.8s; font-size: 42px; opacity: 0.42; }
+    .floating-hearts span:nth-child(14) { left: 78%; animation-delay: 0.4s; font-size: 26px; opacity: 0.3; }
+    .floating-hearts span:nth-child(15) { left: 84%; animation-delay: 6.1s; font-size: 36px; opacity: 0.35; }
+    .floating-hearts span:nth-child(16) { left: 90%; animation-delay: 2.9s; font-size: 30px; opacity: 0.3; }
+    .floating-hearts span:nth-child(17) { left: 95%; animation-delay: 4.7s; font-size: 46px; opacity: 0.5; }
+    .floating-hearts span:nth-child(18) { left: 14%; animation-delay: 9.2s; font-size: 24px; opacity: 0.28; }
+    .floating-hearts span:nth-child(19) { left: 45%; animation-delay: 7.8s; font-size: 48px; opacity: 0.45; }
+    .floating-hearts span:nth-child(20) { left: 75%; animation-delay: 3.2s; font-size: 32px; opacity: 0.35; }
 
     @keyframes rise {
-      0% { transform: translateY(0) scale(0.4) rotate(0deg); opacity: 0.2; }
-      20% { opacity: 0.9; }
-      80% { opacity: 0.8; }
-      100% { transform: translateY(-120vh) scale(1.8) rotate(25deg); opacity: 0; }
+      0% { transform: translateY(0) scale(0.3) rotate(0deg); opacity: 0.15; }
+      15% { opacity: 0.9; }
+      75% { opacity: 0.8; }
+      100% { transform: translateY(-120vh) scale(1.6) rotate(30deg); opacity: 0; }
     }
 
-    /* main container — refined */
+    /* main container */
     .love-container {
       position: relative;
       width: 560px;
@@ -92,7 +106,7 @@
       transform: perspective(1200px) rotateX(2deg) scale(1.01);
     }
 
-    /* flap – elegant fold with gradient */
+    /* flap */
     .flap {
       position: absolute;
       top: -2px;
@@ -124,7 +138,6 @@
       border-radius: 0 0 50% 50% / 0 0 100% 100%;
     }
 
-    /* envelope text – refined */
     .envelope-text {
       position: absolute;
       bottom: 34px;
@@ -153,7 +166,7 @@
       letter-spacing: 2px;
     }
 
-    /* wax seal – more detailed */
+    /* wax seal */
     .seal {
       position: absolute;
       top: 100px;
@@ -183,7 +196,7 @@
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
 
-    /* LETTER (paper) – premium texture */
+    /* LETTER (paper) */
     .letter-paper {
       position: absolute;
       bottom: 34px;
@@ -205,17 +218,9 @@
       scrollbar-width: thin;
       scrollbar-color: #c9a692 #f2dfd2;
     }
-    .letter-paper::-webkit-scrollbar {
-      width: 6px;
-    }
-    .letter-paper::-webkit-scrollbar-thumb {
-      background: #c9a692;
-      border-radius: 20px;
-    }
-    .letter-paper::-webkit-scrollbar-track {
-      background: #f2dfd2;
-      border-radius: 20px;
-    }
+    .letter-paper::-webkit-scrollbar { width: 6px; }
+    .letter-paper::-webkit-scrollbar-thumb { background: #c9a692; border-radius: 20px; }
+    .letter-paper::-webkit-scrollbar-track { background: #f2dfd2; border-radius: 20px; }
 
     .letter-paper h2 {
       color: #9e3f4b;
@@ -253,7 +258,7 @@
       color: #b16d6d;
     }
 
-    /* OPEN state – smooth */
+    /* OPEN state */
     .love-container.open .flap {
       transform: rotateX(180deg);
       transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -273,7 +278,7 @@
       transition: opacity 0.5s;
     }
 
-    /* BUTTONS — premium glassmorphism */
+    /* BUTTONS */
     .action-buttons {
       margin-top: 320px;
       display: flex;
@@ -314,6 +319,62 @@
       transform: scale(0.94);
     }
 
+    /* ===== MAGICAL BURST EFFECTS ===== */
+    .burst-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      overflow: hidden;
+    }
+    .burst-item {
+      position: absolute;
+      font-size: 40px;
+      animation: burstFly 1.6s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+      user-select: none;
+      pointer-events: none;
+      text-shadow: 0 0 30px rgba(255, 100, 150, 0.7);
+      opacity: 0;
+    }
+    @keyframes burstFly {
+      0% { 
+        transform: translate(0, 0) scale(0.2) rotate(0deg); 
+        opacity: 0; 
+      }
+      15% { 
+        opacity: 1; 
+        transform: translate(var(--tx), var(--ty)) scale(1.4) rotate(20deg); 
+      }
+      70% { 
+        opacity: 1; 
+      }
+      100% { 
+        transform: translate(calc(var(--tx) * 1.6), calc(var(--ty) * 1.6)) scale(0.6) rotate(50deg); 
+        opacity: 0; 
+      }
+    }
+
+    /* sparkle ring */
+    .sparkle-ring {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 999;
+      animation: ringPulse 0.9s ease-out forwards;
+      box-shadow: 0 0 40px 20px rgba(255, 200, 220, 0.6);
+      background: radial-gradient(circle, #fff5e6, #ff8a9e);
+      transform: translate(-50%, -50%) scale(0);
+    }
+    @keyframes ringPulse {
+      0% { transform: translate(-50%, -50%) scale(0); opacity: 0.9; }
+      50% { transform: translate(-50%, -50%) scale(12); opacity: 0.6; }
+      100% { transform: translate(-50%, -50%) scale(18); opacity: 0; }
+    }
+
     /* responsive */
     @media (max-width: 600px) {
       .love-container { width: 98vw; height: 420px; }
@@ -349,20 +410,24 @@
   </style>
 </head>
 <body>
-  <!-- floating hearts -->
+  <!-- floating hearts — INCREASED to 20 with variety -->
   <div class="floating-hearts">
-    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
   </div>
 
+  <!-- burst container for magical effects -->
+  <div class="burst-container" id="burstContainer"></div>
+
   <div class="love-container" id="loveContainer">
-    <!-- ENVELOPE -->
     <div class="envelope" id="envelope">
       <div class="flap"></div>
       <div class="seal"></div>
       <div class="envelope-text"><span>💌  open  💌</span></div>
     </div>
 
-    <!-- LETTER -->
     <div class="letter-paper" id="letterPaper">
       <h2>❤️ Henriette ❤️</h2>
       <p>
@@ -374,7 +439,6 @@
       <div class="decor-line">✨ 💖 ✨</div>
     </div>
 
-    <!-- buttons -->
     <div class="action-buttons">
       <button id="openBtn">💕 Open</button>
       <button id="closeBtn">📩 Close</button>
@@ -388,24 +452,107 @@
       const letter = document.getElementById('letterPaper');
       const openBtn = document.getElementById('openBtn');
       const closeBtn = document.getElementById('closeBtn');
+      const burstContainer = document.getElementById('burstContainer');
 
-      // toggle on envelope click
+      // ─── BURST EFFECTS ──────────────────────────────────────
+      const emojis = ['❤️', '💖', '✨', 'Seleman', '💕', '💗', 'Henriette', '🌺', 'Seleman', 'Love u', 'Love u', '💝', 'Love u', '🥰', '💞', '♥️', '✨', 'Henriette'];
+
+      function createBurst(x, y) {
+        // ring pulse at center
+        const ring = document.createElement('div');
+        ring.className = 'sparkle-ring';
+        document.body.appendChild(ring);
+        setTimeout(() => ring.remove(), 1000);
+
+        const count = 40 + Math.floor(Math.random() * 25);
+        const fragments = [];
+
+        for (let i = 0; i < count; i++) {
+          const el = document.createElement('div');
+          el.className = 'burst-item';
+          const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+          el.textContent = emoji;
+          
+          // random direction and distance
+          const angle = Math.random() * 2 * Math.PI;
+          const distance = 120 + Math.random() * 280;
+          const tx = Math.cos(angle) * distance;
+          const ty = Math.sin(angle) * distance - 80; // bias upward
+          
+          el.style.setProperty('--tx', tx + 'px');
+          el.style.setProperty('--ty', ty + 'px');
+          
+          // random size
+          const size = 28 + Math.random() * 48;
+          el.style.fontSize = size + 'px';
+          
+          // random rotation
+          el.style.setProperty('--rot', (Math.random() * 360) + 'deg');
+          
+          // random delay for organic feel
+          el.style.animationDelay = (Math.random() * 0.25) + 's';
+          
+          // position at click (or center)
+          const cx = x || window.innerWidth / 2;
+          const cy = y || window.innerHeight / 2;
+          el.style.left = (cx - 20) + 'px';
+          el.style.top = (cy - 20) + 'px';
+          
+          burstContainer.appendChild(el);
+          fragments.push(el);
+        }
+
+        // clean up after animation
+        setTimeout(() => {
+          fragments.forEach(el => el.remove());
+        }, 2000);
+      }
+
+      // ─── TRIGGER BURST FROM ENVELOPE AREA ──────────────────
+      function triggerMagicalOpen() {
+        // get envelope center
+        const rect = envelope.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2 - 20;
+        createBurst(cx, cy);
+
+        // extra burst from top corners
+        setTimeout(() => {
+          const cx2 = rect.left + rect.width * 0.2;
+          const cy2 = rect.top + rect.height * 0.3;
+          createBurst(cx2, cy2);
+        }, 150);
+        setTimeout(() => {
+          const cx3 = rect.left + rect.width * 0.8;
+          const cy3 = rect.top + rect.height * 0.3;
+          createBurst(cx3, cy3);
+        }, 300);
+      }
+
+      // ─── OPEN / CLOSE LOGIC ────────────────────────────────
       function toggleLetter() {
         container.classList.toggle('open');
       }
 
       function openLetter() {
-        container.classList.add('open');
+        if (!container.classList.contains('open')) {
+          container.classList.add('open');
+          triggerMagicalOpen();
+        }
       }
 
       function closeLetter() {
         container.classList.remove('open');
       }
 
-      // envelope click toggles
+      // envelope click toggles (with burst on open)
       envelope.addEventListener('click', function(e) {
         e.stopPropagation();
-        toggleLetter();
+        if (!container.classList.contains('open')) {
+          openLetter();
+        } else {
+          closeLetter();
+        }
       });
 
       // prevent letter click from bubbling
@@ -424,11 +571,7 @@
         closeLetter();
       });
 
-      // close if click outside (optional) – but we keep it user-friendly
-      document.addEventListener('click', function(e) {
-        // if click is outside container and not on buttons, do nothing (let user control)
-        // we don't force close to respect user choice.
-      });
+      console.log('💖 Love letter with 20 floating hearts and magical bursts!');
     })();
   </script>
 </body>

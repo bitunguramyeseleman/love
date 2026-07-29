@@ -320,9 +320,11 @@
       .envelope { height: 250px; border-radius: 24px; }
       .flap { border-left-width: 220px; border-right-width: 220px; border-top-width: 130px; }
       .flap::after { left: -220px; width: 440px; top: -130px; height: 130px; }
-      .letter-paper { width: 90%; padding: 24px 18px; }
-      .letter-paper h2 { font-size: 24px; }
-      .letter-paper p { font-size: 16px; }
+      .letter-paper { width: 90%; padding: 20px 14px; }
+      .letter-paper h2 { font-size: 20px; }
+      .letter-paper p { font-size: 14px; line-height: 1.8; }
+      .letter-paper .signature { font-size: 16px; }
+      .letter-paper .decor-line { font-size: 18px; }
       .seal { width: 54px; height: 54px; top: 80px; }
       .seal::after { font-size: 26px; }
       .envelope-text span { font-size: 19px; padding: 6px 20px; }
@@ -333,9 +335,16 @@
       .flap { border-left-width: 170px; border-right-width: 170px; border-top-width: 105px; }
       .flap::after { left: -170px; width: 340px; top: -105px; height: 105px; }
       .envelope { height: 220px; }
+      .letter-paper { padding: 16px 12px; }
+      .letter-paper h2 { font-size: 17px; }
+      .letter-paper p { font-size: 12px; line-height: 1.7; }
+      .letter-paper .signature { font-size: 14px; }
+      .letter-paper .decor-line { font-size: 16px; }
       .seal { width: 44px; height: 44px; top: 68px; }
       .seal::after { font-size: 22px; }
       .action-buttons { margin-top: 260px; }
+      .action-buttons button { padding: 8px 16px; font-size: 14px; }
+      .envelope-text span { font-size: 16px; padding: 4px 14px; }
     }
   </style>
 </head>
@@ -346,7 +355,7 @@
   </div>
 
   <div class="love-container" id="loveContainer">
-    <!-- ENVELOPE --><p style="color: white;">Developer love BTSE</p>
+    <!-- ENVELOPE -->
     <div class="envelope" id="envelope">
       <div class="flap"></div>
       <div class="seal"></div>

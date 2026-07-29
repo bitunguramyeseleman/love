@@ -24,7 +24,7 @@
       overflow-x: hidden;
     }
 
-    /* floating hearts background — INCREASED COUNT & VARIETY */
+    /* floating hearts background */
     .floating-hearts {
       position: fixed;
       inset: 0;
@@ -34,41 +34,28 @@
     }
     .floating-hearts span {
       position: absolute;
-      bottom: -100px;
+      bottom: -80px;
       color: #f4aab9;
-      font-size: 28px;
+      font-size: 30px;
       user-select: none;
-      animation: rise 16s linear infinite;
-      text-shadow: 0 0 25px rgba(255, 60, 100, 0.7);
-      opacity: 0.25;
+      animation: rise 14s linear infinite;
+      text-shadow: 0 0 20px rgba(255, 60, 100, 0.6);
+      opacity: 0.3;
     }
-    /* 20 hearts with varied positions, sizes, delays */
-    .floating-hearts span:nth-child(1) { left: 2%; animation-delay: 0.0s; font-size: 32px; opacity: 0.35; }
-    .floating-hearts span:nth-child(2) { left: 7%; animation-delay: 1.8s; font-size: 26px; opacity: 0.3; }
-    .floating-hearts span:nth-child(3) { left: 12%; animation-delay: 3.6s; font-size: 40px; opacity: 0.4; }
-    .floating-hearts span:nth-child(4) { left: 18%; animation-delay: 5.2s; font-size: 22px; opacity: 0.25; }
-    .floating-hearts span:nth-child(5) { left: 24%; animation-delay: 0.9s; font-size: 36px; opacity: 0.35; }
-    .floating-hearts span:nth-child(6) { left: 30%; animation-delay: 7.4s; font-size: 30px; opacity: 0.3; }
-    .floating-hearts span:nth-child(7) { left: 36%; animation-delay: 4.1s; font-size: 44px; opacity: 0.45; }
-    .floating-hearts span:nth-child(8) { left: 42%; animation-delay: 2.3s; font-size: 24px; opacity: 0.28; }
-    .floating-hearts span:nth-child(9) { left: 48%; animation-delay: 6.7s; font-size: 38px; opacity: 0.4; }
-    .floating-hearts span:nth-child(10) { left: 54%; animation-delay: 1.2s; font-size: 28px; opacity: 0.32; }
-    .floating-hearts span:nth-child(11) { left: 60%; animation-delay: 8.5s; font-size: 34px; opacity: 0.38; }
-    .floating-hearts span:nth-child(12) { left: 66%; animation-delay: 3.9s; font-size: 20px; opacity: 0.22; }
-    .floating-hearts span:nth-child(13) { left: 72%; animation-delay: 5.8s; font-size: 42px; opacity: 0.42; }
-    .floating-hearts span:nth-child(14) { left: 78%; animation-delay: 0.4s; font-size: 26px; opacity: 0.3; }
-    .floating-hearts span:nth-child(15) { left: 84%; animation-delay: 6.1s; font-size: 36px; opacity: 0.35; }
-    .floating-hearts span:nth-child(16) { left: 90%; animation-delay: 2.9s; font-size: 30px; opacity: 0.3; }
-    .floating-hearts span:nth-child(17) { left: 95%; animation-delay: 4.7s; font-size: 46px; opacity: 0.5; }
-    .floating-hearts span:nth-child(18) { left: 14%; animation-delay: 9.2s; font-size: 24px; opacity: 0.28; }
-    .floating-hearts span:nth-child(19) { left: 45%; animation-delay: 7.8s; font-size: 48px; opacity: 0.45; }
-    .floating-hearts span:nth-child(20) { left: 75%; animation-delay: 3.2s; font-size: 32px; opacity: 0.35; }
+    .floating-hearts span:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 34px; }
+    .floating-hearts span:nth-child(2) { left: 16%; animation-delay: 2.8s; font-size: 26px; }
+    .floating-hearts span:nth-child(3) { left: 28%; animation-delay: 5.2s; font-size: 38px; }
+    .floating-hearts span:nth-child(4) { left: 42%; animation-delay: 1.4s; font-size: 30px; }
+    .floating-hearts span:nth-child(5) { left: 56%; animation-delay: 6.8s; font-size: 32px; }
+    .floating-hearts span:nth-child(6) { left: 70%; animation-delay: 3.6s; font-size: 28px; }
+    .floating-hearts span:nth-child(7) { left: 84%; animation-delay: 8.2s; font-size: 36px; }
+    .floating-hearts span:nth-child(8) { left: 94%; animation-delay: 4.8s; font-size: 24px; }
 
     @keyframes rise {
-      0% { transform: translateY(0) scale(0.3) rotate(0deg); opacity: 0.15; }
-      15% { opacity: 0.9; }
-      75% { opacity: 0.8; }
-      100% { transform: translateY(-120vh) scale(1.6) rotate(30deg); opacity: 0; }
+      0% { transform: translateY(0) scale(0.4) rotate(0deg); opacity: 0.2; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-120vh) scale(1.8) rotate(25deg); opacity: 0; }
     }
 
     /* main container */
@@ -410,12 +397,9 @@
   </style>
 </head>
 <body>
-  <!-- floating hearts — INCREASED to 20 with variety -->
+  <!-- floating hearts -->
   <div class="floating-hearts">
-    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
-    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
-    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
-    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
   </div>
 
   <!-- burst container for magical effects -->
@@ -455,16 +439,16 @@
       const burstContainer = document.getElementById('burstContainer');
 
       // ─── BURST EFFECTS ──────────────────────────────────────
-      const emojis = ['❤️', '💖', '✨', 'Seleman', '💕', '💗', 'Henriette', '🌺', 'Seleman', 'Love u', 'Love u', '💝', 'Love u', '🥰', '💞', '♥️', '✨', 'Henriette'];
+      const emojis = ['❤️', '💖', '✨', 'Seleman', '💕', '💗', 'Henriette', '🌺', 'Henriette', '🎊', '💘', '💝', '🌹', '🥰', 'Love u', '💞', '♥️', '✨', 'Love u'];
 
       function createBurst(x, y) {
         // ring pulse at center
         const ring = document.createElement('div');
         ring.className = 'sparkle-ring';
         document.body.appendChild(ring);
-        setTimeout(() => ring.remove(), 1000);
+        setTimeout(() => ring.remove(), 5000);
 
-        const count = 40 + Math.floor(Math.random() * 25);
+        const count = 0 + Math.floor(Math.random() * 25);
         const fragments = [];
 
         for (let i = 0; i < count; i++) {
@@ -571,7 +555,11 @@
         closeLetter();
       });
 
-      console.log('💖 Love letter with 20 floating hearts and magical bursts!');
+      // extra: burst when open button clicked (already handled)
+      // but we also want burst if openBtn triggers
+      // we already call openLetter() which triggers burst.
+
+      console.log('💖 Love letter with magical bursts ready!');
     })();
   </script>
 </body>

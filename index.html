@@ -24,40 +24,6 @@
       overflow-x: hidden;
     }
 
-    /* floating hearts background */
-    .floating-hearts {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
-    .floating-hearts span {
-      position: absolute;
-      bottom: -80px;
-      color: #f4aab9;
-      font-size: 30px;
-      user-select: none;
-      animation: rise 14s linear infinite;
-      text-shadow: 0 0 20px rgba(255, 60, 100, 0.6);
-      opacity: 0.3;
-    }
-    .floating-hearts span:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 34px; }
-    .floating-hearts span:nth-child(2) { left: 16%; animation-delay: 2.8s; font-size: 26px; }
-    .floating-hearts span:nth-child(3) { left: 28%; animation-delay: 5.2s; font-size: 38px; }
-    .floating-hearts span:nth-child(4) { left: 42%; animation-delay: 1.4s; font-size: 30px; }
-    .floating-hearts span:nth-child(5) { left: 56%; animation-delay: 6.8s; font-size: 32px; }
-    .floating-hearts span:nth-child(6) { left: 70%; animation-delay: 3.6s; font-size: 28px; }
-    .floating-hearts span:nth-child(7) { left: 84%; animation-delay: 8.2s; font-size: 36px; }
-    .floating-hearts span:nth-child(8) { left: 94%; animation-delay: 4.8s; font-size: 24px; }
-
-    @keyframes rise {
-      0% { transform: translateY(0) scale(0.4) rotate(0deg); opacity: 0.2; }
-      20% { opacity: 0.9; }
-      80% { opacity: 0.8; }
-      100% { transform: translateY(-120vh) scale(1.8) rotate(25deg); opacity: 0; }
-    }
-
     /* Developer Credit - Centered at Top */
     .developer-credit {
       position: fixed;
@@ -72,7 +38,6 @@
       border: 1px solid rgba(255, 190, 190, 0.25);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
       pointer-events: none;
-      animation: glowPulse 3s ease-in-out infinite;
       text-align: center;
       white-space: nowrap;
     }
@@ -85,44 +50,19 @@
     }
     .developer-credit .heart-icon {
       color: #ff6b8a;
-      display: inline-block;
-      animation: heartbeat 1.5s ease-in-out infinite;
       margin: 0 4px;
     }
     .developer-credit .highlight {
       color: #f4aab9;
       font-weight: 700;
-      background: linear-gradient(45deg, #ff6b8a, #f4aab9, #ff6b8a);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 3s linear infinite;
     }
     .developer-credit .btse {
       color: #ffb6c8;
       font-weight: 700;
-      text-shadow: 0 0 20px rgba(255, 100, 150, 0.3);
     }
     .developer-credit .divider {
       color: rgba(255, 255, 255, 0.2);
       margin: 0 6px;
-    }
-
-    @keyframes shimmer {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
-    }
-    @keyframes glowPulse {
-      0%, 100% { box-shadow: 0 4px 20px rgba(255, 100, 150, 0.15); }
-      50% { box-shadow: 0 4px 40px rgba(255, 100, 150, 0.35); }
-    }
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      14% { transform: scale(1.3); }
-      28% { transform: scale(1); }
-      42% { transform: scale(1.3); }
-      70% { transform: scale(1); }
     }
 
     /* main container */
@@ -383,79 +323,12 @@
       background: rgba(210, 80, 110, 0.7);
       box-shadow: 0 4px 16px rgba(200, 50, 80, 0.4);
     }
-    .action-buttons button::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .action-buttons button:active::after {
-      opacity: 1;
-    }
     .action-buttons button:hover {
       transform: scale(1.04);
       background: rgba(210, 80, 110, 0.5);
       box-shadow: 0 10px 32px rgba(200, 50, 80, 0.6);
       border-color: #ffd4d8;
       color: #fff8f5;
-    }
-
-    /* ===== MAGICAL BURST EFFECTS ===== */
-    .burst-container {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 999;
-      overflow: hidden;
-    }
-    .burst-item {
-      position: absolute;
-      font-size: 40px;
-      animation: burstFly 1.6s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
-      user-select: none;
-      pointer-events: none;
-      text-shadow: 0 0 30px rgba(255, 100, 150, 0.7);
-      opacity: 0;
-    }
-    @keyframes burstFly {
-      0% { 
-        transform: translate(0, 0) scale(0.2) rotate(0deg); 
-        opacity: 0; 
-      }
-      15% { 
-        opacity: 1; 
-        transform: translate(var(--tx), var(--ty)) scale(1.4) rotate(20deg); 
-      }
-      70% { 
-        opacity: 1; 
-      }
-      100% { 
-        transform: translate(calc(var(--tx) * 1.6), calc(var(--ty) * 1.6)) scale(0.6) rotate(50deg); 
-        opacity: 0; 
-      }
-    }
-
-    /* sparkle ring */
-    .sparkle-ring {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 999;
-      animation: ringPulse 0.9s ease-out forwards;
-      box-shadow: 0 0 40px 20px rgba(255, 200, 220, 0.6);
-      background: radial-gradient(circle, #fff5e6, #ff8a9e);
-      transform: translate(-50%, -50%) scale(0);
-    }
-    @keyframes ringPulse {
-      0% { transform: translate(-50%, -50%) scale(0); opacity: 0.9; }
-      50% { transform: translate(-50%, -50%) scale(12); opacity: 0.6; }
-      100% { transform: translate(-50%, -50%) scale(18); opacity: 0; }
     }
 
     /* responsive */
@@ -468,9 +341,6 @@
       .developer-credit span {
         font-size: 12px;
         letter-spacing: 1px;
-      }
-      .developer-credit .heart-icon {
-        margin: 0 2px;
       }
       .love-container {
         width: 98vw;
@@ -532,27 +402,15 @@
   <!-- Developer Credit - Centered at TOP -->
   <div class="developer-credit">
     <span>
-      <span class="heart-icon">❤️</span> 
-      Developer <span class="highlight">Love</span> 
-      <span class="heart-icon">❤️</span> 
-      <span class="divider">|</span>
-      <span class="btse">BTSE</span>
+      ❤️ Developer Love ❤️ | BTSE
     </span>
   </div>
 
-  <!-- floating hearts -->
-  <div class="floating-hearts">
-    <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
-  </div>
-
-  <!-- burst container for magical effects -->
-  <div class="burst-container" id="burstContainer"></div>
-  
   <div class="love-container" id="loveContainer">
     <div class="envelope" id="envelope">
       <div class="flap"></div>
       <div class="seal"></div>
-      <div class="envelope-text"><span>💌  open  💌</span></div>
+      <div class="envelope-text"><span>💌 open 💌</span></div>
     </div>
 
     <div class="letter-paper" id="letterPaper">
@@ -579,77 +437,10 @@
       const letter = document.getElementById('letterPaper');
       const openBtn = document.getElementById('openBtn');
       const closeBtn = document.getElementById('closeBtn');
-      const burstContainer = document.getElementById('burstContainer');
 
-      // ─── BURST EFFECTS ──────────────────────────────────────
-      const emojis = ['❤️', '💖', '✨', 'Seleman', '💕', '💗', 'Henriette', '🌺', 'Henriette', '🎊', '💘', '💝', '🌹', '🥰', 'Love u', '💞', '♥️', '✨', 'Love u'];
-
-      function createBurst(x, y) {
-        const ring = document.createElement('div');
-        ring.className = 'sparkle-ring';
-        document.body.appendChild(ring);
-        setTimeout(() => ring.remove(), 5000);
-
-        const count = 20 + Math.floor(Math.random() * 20);
-        const fragments = [];
-
-        for (let i = 0; i < count; i++) {
-          const el = document.createElement('div');
-          el.className = 'burst-item';
-          const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-          el.textContent = emoji;
-          
-          const angle = Math.random() * 2 * Math.PI;
-          const distance = 120 + Math.random() * 280;
-          const tx = Math.cos(angle) * distance;
-          const ty = Math.sin(angle) * distance - 80;
-          
-          el.style.setProperty('--tx', tx + 'px');
-          el.style.setProperty('--ty', ty + 'px');
-          
-          const size = 28 + Math.random() * 48;
-          el.style.fontSize = size + 'px';
-          
-          el.style.animationDelay = (Math.random() * 0.25) + 's';
-          
-          const cx = x || window.innerWidth / 2;
-          const cy = y || window.innerHeight / 2;
-          el.style.left = (cx - 20) + 'px';
-          el.style.top = (cy - 20) + 'px';
-          
-          burstContainer.appendChild(el);
-          fragments.push(el);
-        }
-
-        setTimeout(() => {
-          fragments.forEach(el => el.remove());
-        }, 2000);
-      }
-
-      // ─── TRIGGER BURST FROM ENVELOPE AREA ──────────────────
-      function triggerMagicalOpen() {
-        const rect = envelope.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2 - 20;
-        createBurst(cx, cy);
-
-        setTimeout(() => {
-          const cx2 = rect.left + rect.width * 0.2;
-          const cy2 = rect.top + rect.height * 0.3;
-          createBurst(cx2, cy2);
-        }, 150);
-        setTimeout(() => {
-          const cx3 = rect.left + rect.width * 0.8;
-          const cy3 = rect.top + rect.height * 0.3;
-          createBurst(cx3, cy3);
-        }, 300);
-      }
-
-      // ─── OPEN / CLOSE LOGIC ────────────────────────────────
       function openLetter() {
         if (!container.classList.contains('open')) {
           container.classList.add('open');
-          triggerMagicalOpen();
         }
       }
 
@@ -686,7 +477,7 @@
         closeLetter();
       });
 
-      console.log('💖 Love letter with magical bursts ready!');
+      console.log('💖 Love letter ready!');
     })();
   </script>
 </body>

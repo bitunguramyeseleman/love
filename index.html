@@ -58,10 +58,10 @@
       100% { transform: translateY(-120vh) scale(1.8) rotate(25deg); opacity: 0; }
     }
 
-    /* Developer Credit - Centered at Bottom */
+    /* Developer Credit - Centered at Top */
     .developer-credit {
       position: fixed;
-      bottom: 20px;
+      top: 20px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 100;
@@ -136,6 +136,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
+      margin-top: 20px;
     }
 
     /* ENVELOPE — premium design */
@@ -155,6 +156,7 @@
       border-top: 3px solid #f5a0ae;
       transform: perspective(1200px) rotateX(0deg);
       -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
     .envelope:active {
       transform: perspective(1200px) rotateX(2deg) scale(0.98);
@@ -459,7 +461,7 @@
     /* responsive */
     @media (max-width: 600px) {
       .developer-credit {
-        bottom: 12px;
+        top: 12px;
         padding: 8px 18px;
         white-space: nowrap;
       }
@@ -470,7 +472,11 @@
       .developer-credit .heart-icon {
         margin: 0 2px;
       }
-      .love-container { width: 98vw; height: 420px; }
+      .love-container {
+        width: 98vw;
+        height: 420px;
+        margin-top: 10px;
+      }
       .envelope { height: 250px; border-radius: 24px; }
       .flap { border-left-width: 220px; border-right-width: 220px; border-top-width: 130px; }
       .flap::after { left: -220px; width: 440px; top: -130px; height: 130px; }
@@ -492,12 +498,15 @@
     }
     @media (max-width: 420px) {
       .developer-credit {
-        bottom: 8px;
+        top: 8px;
         padding: 6px 14px;
       }
       .developer-credit span {
         font-size: 10px;
         letter-spacing: 0.5px;
+      }
+      .love-container {
+        margin-top: 5px;
       }
       .flap { border-left-width: 170px; border-right-width: 170px; border-top-width: 105px; }
       .flap::after { left: -170px; width: 340px; top: -105px; height: 105px; }
@@ -520,6 +529,17 @@
   </style>
 </head>
 <body>
+  <!-- Developer Credit - Centered at TOP -->
+  <div class="developer-credit">
+    <span>
+      <span class="heart-icon">❤️</span> 
+      Developer <span class="highlight">Love</span> 
+      <span class="heart-icon">❤️</span> 
+      <span class="divider">|</span>
+      <span class="btse">BTSE</span>
+    </span>
+  </div>
+
   <!-- floating hearts -->
   <div class="floating-hearts">
     <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
@@ -534,16 +554,6 @@
       <div class="seal"></div>
       <div class="envelope-text"><span>💌  open  💌</span></div>
     </div>
- <!-- Developer Credit - Centered at Bottom -->
-  <div class="developer-credit">
-    <span>
-      <span class="heart-icon">❤️</span> 
-      Developer <span class="highlight">Love</span> 
-      <span class="heart-icon">❤️</span> 
-      <span class="divider">|</span>
-      <span class="btse">BTSE</span>
-    </span>
-  </div>
 
     <div class="letter-paper" id="letterPaper">
       <h2>❤️ Henriette ❤️</h2>
@@ -562,7 +572,6 @@
     </div>
   </div>
 
- 
   <script>
     (function() {
       const container = document.getElementById('loveContainer');
@@ -576,7 +585,6 @@
       const emojis = ['❤️', '💖', '✨', 'Seleman', '💕', '💗', 'Henriette', '🌺', 'Henriette', '🎊', '💘', '💝', '🌹', '🥰', 'Love u', '💞', '♥️', '✨', 'Love u'];
 
       function createBurst(x, y) {
-        // ring pulse at center
         const ring = document.createElement('div');
         ring.className = 'sparkle-ring';
         document.body.appendChild(ring);
@@ -591,26 +599,19 @@
           const emoji = emojis[Math.floor(Math.random() * emojis.length)];
           el.textContent = emoji;
           
-          // random direction and distance
           const angle = Math.random() * 2 * Math.PI;
           const distance = 120 + Math.random() * 280;
           const tx = Math.cos(angle) * distance;
-          const ty = Math.sin(angle) * distance - 80; // bias upward
+          const ty = Math.sin(angle) * distance - 80;
           
           el.style.setProperty('--tx', tx + 'px');
           el.style.setProperty('--ty', ty + 'px');
           
-          // random size
           const size = 28 + Math.random() * 48;
           el.style.fontSize = size + 'px';
           
-          // random rotation
-          el.style.setProperty('--rot', (Math.random() * 360) + 'deg');
-          
-          // random delay for organic feel
           el.style.animationDelay = (Math.random() * 0.25) + 's';
           
-          // position at click (or center)
           const cx = x || window.innerWidth / 2;
           const cy = y || window.innerHeight / 2;
           el.style.left = (cx - 20) + 'px';
@@ -620,7 +621,6 @@
           fragments.push(el);
         }
 
-        // clean up after animation
         setTimeout(() => {
           fragments.forEach(el => el.remove());
         }, 2000);
@@ -628,13 +628,11 @@
 
       // ─── TRIGGER BURST FROM ENVELOPE AREA ──────────────────
       function triggerMagicalOpen() {
-        // get envelope center
         const rect = envelope.getBoundingClientRect();
         const cx = rect.left + rect.width / 2;
         const cy = rect.top + rect.height / 2 - 20;
         createBurst(cx, cy);
 
-        // extra burst from top corners
         setTimeout(() => {
           const cx2 = rect.left + rect.width * 0.2;
           const cy2 = rect.top + rect.height * 0.3;
@@ -648,10 +646,6 @@
       }
 
       // ─── OPEN / CLOSE LOGIC ────────────────────────────────
-      function toggleLetter() {
-        container.classList.toggle('open');
-      }
-
       function openLetter() {
         if (!container.classList.contains('open')) {
           container.classList.add('open');
@@ -663,7 +657,6 @@
         container.classList.remove('open');
       }
 
-      // envelope click toggles (with burst on open)
       envelope.addEventListener('click', function(e) {
         e.stopPropagation();
         if (!container.classList.contains('open')) {
@@ -673,39 +666,25 @@
         }
       });
 
-      // Touch events for mobile
       envelope.addEventListener('touchstart', function(e) {
-        // Prevent double tap zoom
-        e.preventDefault();
-      }, { passive: false });
+        if (e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: true });
 
-      // prevent letter click from bubbling
       letter.addEventListener('click', function(e) {
         e.stopPropagation();
       });
-      letter.addEventListener('touchstart', function(e) {
-        e.stopPropagation();
-      }, { passive: true });
 
-      // button controls with touch optimization
       openBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         openLetter();
       });
 
-      openBtn.addEventListener('touchstart', function(e) {
-        // Prevent default to avoid double firing
-        e.preventDefault();
-      }, { passive: false });
-
       closeBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         closeLetter();
       });
-
-      closeBtn.addEventListener('touchstart', function(e) {
-        e.preventDefault();
-      }, { passive: false });
 
       console.log('💖 Love letter with magical bursts ready!');
     })();

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>MyLove · Seleman</title>
+  <title>Love · Seleman</title>
   <style>
     * {
       margin: 0;
@@ -15,13 +15,21 @@
     body {
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(145deg, #1e1a2b 0%, #322b3f 100%);
       padding: 20px;
       margin: 0;
       position: relative;
       overflow-x: hidden;
+
+      /* ===== YOUR PNG BACKGROUND ===== */
+      background-image: url('a.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #1e1a2b; /* fallback while image loads */
     }
 
     /* floating hearts background */
@@ -58,7 +66,7 @@
       100% { transform: translateY(-120vh) scale(1.8) rotate(25deg); opacity: 0; }
     }
 
-    /* Developer Credit - Centered at 30% from top */
+    /* Developer Credit */
     .developer-credit {
       position: fixed;
       top: 15%;
@@ -97,7 +105,7 @@
       margin-top: 0;
     }
 
-    /* ENVELOPE — premium design */
+    /* ENVELOPE */
     .envelope {
       position: absolute;
       bottom: 0;
@@ -267,6 +275,7 @@
       font-size: 20px;
       color: #7a4040;
       font-weight: 500;
+      display: block;
     }
     .letter-paper .decor-line {
       text-align: center;
@@ -296,7 +305,7 @@
       transition: opacity 0.5s;
     }
 
-    /* BUTTONS - Mobile Optimized */
+    /* BUTTONS */
     .action-buttons {
       margin-top: 320px;
       display: flex;
@@ -349,6 +358,48 @@
       color: #fff8f5;
     }
 
+    /* ===== PHOTO CIRCLES UNDER LETTER ===== */
+    .photo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      margin-top: 30px;
+      z-index: 50;
+      position: relative;
+      pointer-events: auto;
+      flex-wrap: wrap;
+      padding: 0 10px;
+    }
+
+    .mine {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(255, 190, 190, 0.85);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6),
+                  0 0 22px rgba(255, 90, 130, 0.55);
+      background: rgba(255, 230, 220, 0.1);
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .mine img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mine:hover {
+      transform: scale(1.08);
+      border-color: #ffd4d8;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7),
+                  0 0 32px rgba(255, 100, 150, 0.85);
+    }
+
     /* responsive */
     @media (max-width: 600px) {
       .developer-credit {
@@ -382,6 +433,8 @@
         min-width: 100px;
         flex: 1;
       }
+      .photo-row { gap: 18px; margin-top: 22px; }
+      .mine { width: 88px; height: 88px; border-width: 2.5px; }
     }
     @media (max-width: 420px) {
       .developer-credit {
@@ -409,11 +462,13 @@
         min-width: 80px;
       }
       .envelope-text span { font-size: 16px; padding: 4px 14px; }
+      .photo-row { gap: 14px; margin-top: 18px; }
+      .mine { width: 72px; height: 72px; border-width: 2px; }
     }
   </style>
 </head>
 <body>
-  <!-- Developer Credit - Centered at 30% from top -->
+  <!-- Developer Credit -->
   <div class="developer-credit">
     <span>❤️ Developer Love ❤️ | BTSE</span>
   </div>
@@ -423,6 +478,7 @@
     <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
   </div>
 
+  <!-- Letter container -->
   <div class="love-container" id="loveContainer">
     <div class="envelope" id="envelope">
       <div class="flap"></div>
@@ -431,12 +487,14 @@
     </div> 
 
     <div class="letter-paper" id="letterPaper">
-      <h2>❤️ Henriette ❤️</h2>
+      <h2> Aurore 🥏 </h2>
       <p>
-        My love, 
-        every day with you feels like a beautiful dream. 
-        You are my sunshine, my calm, and my greatest joy, always love you.
-        <span class="signature">Forever ❤️ In my heart</span>
+        Aurore, just know that since secondary school, I really, really liked you more than you could imagine. 
+        The good thing is that you never knew; I made sure you didn’t even suspect it.
+        I still love you, even though you never realized it. So let me just tell you this so I can get it off my chest. 
+        You don’t have to reply to me calm down. Just know that it’s a secret.
+
+        <span class="signature">Forever</span>
       </p>
       <div class="decor-line">✨ 💖 ✨</div>
     </div>
@@ -444,6 +502,16 @@
     <div class="action-buttons">
       <button id="openBtn">💕 Open</button>
       <button id="closeBtn">📩 Close</button>
+    </div>
+  </div>
+
+  <!-- 👇 Photo circles under the letter -->
+  <div class="photo-row">
+    <div class="mine">
+      <img src="a.png" alt="Aurore">
+    </div>
+    <div class="mine">
+      <img src="a1.png" alt="Me">
     </div>
   </div>
 
